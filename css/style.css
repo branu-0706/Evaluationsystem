@@ -1,0 +1,399 @@
+/* 全体のスタイル */
+body {
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ナビゲーションバーのスタイル */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* カードのスタイル */
+.card {
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-header {
+  border-radius: 8px 8px 0 0 !important;
+  padding: 12px 16px;
+}
+
+/* ベースカラーの変更: カードヘッダー */
+.card-header.bg-primary {
+  background-color: #001350 !important;
+}
+
+/* ベースカラーの変更: ナビバー */
+.navbar-dark.bg-primary {
+  background-color: #001350 !important;
+}
+
+/* ボタンスタイル */
+.btn {
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+/* ベースカラーの変更: プライマリーボタン */
+.btn-primary {
+  background-color: #001350;
+  border-color: #001350;
+}
+
+.btn-primary:hover {
+  background-color: #00092e;
+  border-color: #00092e;
+}
+
+/* ベースカラーの変更: アウトラインボタン */
+.btn-outline-primary {
+  color: #001350;
+  border-color: #001350;
+}
+
+.btn-outline-primary:hover {
+  background-color: #001350;
+  border-color: #001350;
+  color: #fff; /* ホバー時のテキスト色を追加 */
+}
+
+/* ベースカラーの変更: info系ボタンのアウトライン */
+.btn-outline-info {
+    color: #001350; /* 通常時の文字色をベースカラーに */
+    border-color: #001350; /* 通常時の枠線色をベースカラーに */
+}
+.btn-outline-info:hover {
+    background-color: #001350; /* ホバー時の背景色をベースカラーに */
+    border-color: #001350;    /* ホバー時の枠線色をベースカラーに */
+    color: #fff;               /* ホバー時の文字色を白に */
+}
+
+
+/* ベースカラーの変更: success系ボタンのアウトライン */
+.btn-outline-success {
+    color: #001350;
+    border-color: #001350;
+}
+.btn-outline-success:hover {
+    background-color: #001350;
+    border-color: #001350;
+    color: #fff;
+}
+
+
+/* テーブルスタイル */
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  border-top: none;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 19, 80, 0.05);
+}
+
+/* ステータスバッジ */
+.badge {
+  padding: 6px 10px;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+/* ベースカラーの変更: バッジ */
+.badge.bg-primary {
+  background-color: #001350 !important;
+}
+.badge.bg-secondary { /* レポートページなどで使用 */
+    background-color: #6c757d !important;
+}
+.badge.bg-warning { /* レポートページなどで使用 */
+    color: #000 !important; /* 文字色を黒にしないと見えにくい場合がある */
+    background-color: #ffc107 !important;
+}
+
+
+/* フォームスタイル */
+.form-control:focus, .form-select:focus {
+  border-color: #001350;
+  box-shadow: 0 0 0 0.25rem rgba(0, 19, 80, 0.25);
+}
+
+/* 評価状態ラベル */
+.status-draft {
+  color: #6c757d; /* グレー系 */
+}
+
+.status-submitted {
+  color: #fd7e14; /* オレンジ系 */
+}
+
+.status-approved-evaluator {
+  color: #001350; /* プライマリカラー */
+}
+
+.status-approved-admin {
+  color: #28a745; /* Bootstrapの成功色に近い緑 */
+}
+
+/* ローディング表示 (必要であれば) */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden; /* 初期状態は非表示 */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.loading-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* トースト通知 */
+.toast {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+/* トーストのボーダーをタイプ別に変更 */
+.toast.bg-success { border-left: 5px solid #198754; }
+.toast.bg-danger  { border-left: 5px solid #dc3545; }
+.toast.bg-warning { border-left: 5px solid #ffc107; }
+.toast.bg-info    { border-left: 5px solid #001350; } /* ベースカラーに合わせる */
+
+
+/* レーダーチャート */
+.radar-chart-container {
+  position: relative;
+  height: 300px; /* 必要に応じて調整 */
+  width: 100%;   /* 必要に応じて調整 */
+}
+
+/* 比較テーブル */
+.comparison-table th, .comparison-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.highlight-diff {
+  background-color: rgba(0, 19, 80, 0.1) !important; /* ベースカラーの薄い色 */
+  font-weight: bold;
+}
+
+/* 評価入力モーダル用スタイル */
+.category-header {
+  background-color: #e9ecef; /* Bootstrapのtable-lightに近い色 */
+  padding: 10px 15px;
+  margin-top: 15px; /* カテゴリ間のスペース */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.category-header:first-child {
+    margin-top: 0;
+}
+
+
+.category-item { /* 定量評価の各項目コンテナ */
+  padding: 15px;
+  border: 1px solid #dee2e6; /* 枠線を追加 */
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+
+.qualitative-item { /* 定性評価の各項目コンテナ (カードスタイル適用) */
+  margin-bottom: 15px;
+}
+
+
+.weight-display { /* 定性評価のウェイト表示 (現在は未使用の可能性) */
+  text-align: right;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.total-weight {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  border-radius: 0 0 5px 5px;
+}
+
+.total-weight.warning {
+  color: #dc3545 !important; /* Bootstrapのdangerカラー */
+  background-color: #f8d7da; /* Bootstrapのdanger背景に近い色 */
+}
+
+/* ベースカラーの変更: プログレスバー */
+.progress-bar {
+  background-color: #001350;
+}
+
+/* ベースカラーの変更: 情報系背景 */
+.bg-info {
+  background-color: #001350 !important; /* プライマリカラーを使用 */
+}
+.btn-outline-info {
+    color: #001350;
+    border-color: #001350;
+}
+.btn-outline-info:hover {
+    color: #fff;
+    background-color: #001350;
+    border-color: #001350;
+}
+
+
+/* ベースカラーの変更: 成功系背景 */
+/* .bg-success は Bootstrap のデフォルトでも良いが、統一感を出すなら以下も検討 */
+/* .bg-success { background-color: #001350 !important; } */
+
+
+/* テキストカラー */
+.text-primary { color: #001350 !important; }
+.text-success { color: #198754 !important; } /* Bootstrapのデフォルト成功色 */
+.text-info    { color: #001350 !important; } /* プライマリカラーを使用 */
+.text-warning { color: #664d03 !important; } /* Bootstrapのデフォルト警告色 */
+.text-danger  { color: #dc3545 !important; } /* Bootstrapのデフォルト危険色 */
+
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  .container, .container-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .card-body { padding: 1rem; }
+  h2 { font-size: 1.75rem; }
+  h5 { font-size: 1.1rem; }
+  .radar-chart-container { height: 250px; }
+  /* モーダル内のフォントサイズなどを調整 */
+  .modal-body, .modal-footer { font-size: 0.95rem; }
+  .modal-body .form-label { font-size: 0.9rem; }
+}
+
+/* デモ通知 */
+.demo-badge {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #001350;
+  color: white;
+  padding: 5px 10px;
+  z-index: 1100; /* モーダルより手前、ナビバーより手前など調整 */
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom-left-radius: 5px;
+}
+
+/* ナビゲーションアクティブ状態 */
+.nav-link.active {
+  background-color: #00092e !important; /* より濃いベースカラー */
+  color: white !important;
+  border-radius: 4px;
+}
+
+/* アクティブなタブ */
+.nav-tabs .nav-link {
+    color: #495057; /* Bootstrapのデフォルトに近い非アクティブ色 */
+    border-bottom-width: 2px;
+}
+.nav-tabs .nav-link.active {
+  color: #001350;
+  border-color: #dee2e6 #dee2e6 #fff; /* Bootstrapのタブスタイルに合わせる */
+  border-bottom-color: #001350 !important; /* アクティブタブの下線をベースカラーに */
+}
+
+
+/* モーダルヘッダー */
+.modal-header {
+  background-color: #001350;
+  color: white;
+}
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* 白い閉じるボタン */
+}
+
+/* モーダル内のプライマリボタン */
+.modal-footer .btn-primary {
+  background-color: #001350;
+  border-color: #001350;
+}
+.modal-footer .btn-primary:hover {
+  background-color: #00092e;
+  border-color: #00092e;
+}
+
+/* 評価入力モーダルのカテゴリ項目調整 */
+#quantitative-categories-container .category-section {
+    margin-bottom: 1.5rem;
+}
+#quantitative-categories-container .category-header {
+    margin-bottom: 1rem;
+}
+#quantitative-categories-container .category-item .row > div { /* 自己評価と評価者評価の列 */
+    margin-bottom: 0.5rem;
+}
+
+#qualitative-items-container .qualitative-item .card-body {
+    padding: 1rem;
+}
+
+/* ユーザー管理モーダルの追加項目 */
+#custom-fields-container-form .custom-field-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #eee;
+    border-radius: 0.25rem;
+}
+#custom-fields-container-form .custom-field-entry input {
+    flex-grow: 1;
+}
+
+/* カテゴリ編集モーダルの評価項目 */
+#category-items-container-form .category-item-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+#category-items-container-form .category-item-entry input {
+    flex-grow: 1;
+}
+
+/* 読み取り専用の入力フィールド風スタイル */
+.form-control-plaintext.strong { /* レポートページ等で利用 */
+    font-weight: 600;
+}
